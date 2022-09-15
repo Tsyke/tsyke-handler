@@ -1,10 +1,10 @@
 require('dotenv').config();
-const { Intents, MessageEmbed } = require("discord.js");
+const { Intents } = require("discord.js");
 
-const Stats = require("./class/Client.js");
+const TsykeHandler = require("./class/Client.js");
 const { AllCommand } = require('./Functions');
 
-const client = new Stats({
+const client = new TsykeHandler({
     intents: [
         Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES,
@@ -12,7 +12,7 @@ const client = new Stats({
         Intents.FLAGS.GUILD_PRESENCES,
         Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
         Intents.FLAGS.DIRECT_MESSAGES,
-        Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
+        Intents.FLAGS.DIRECT_MESSAGE_REACTIONS
     ],
     partials: ["MESSAGE", "CHANNEL", "REACTION", "USER"]
 });
@@ -25,7 +25,7 @@ client.on('ready', () => {
     ]
     let i = 0
     setInterval(() => {
-        client.user.setActivity(statuses[i](), { type: "STREAMING", url: "https://twitch.tv/uwu" });
+        client.user.setActivity(statuses[i](), { type: "STREAMING", url: "https://twitch.tv/TsykeHandler" });
         i = ++i % statuses.length;
     }, 1e4)
 });
@@ -34,8 +34,7 @@ client.on('ready', () => {
     await client.login(process.env.TOKEN);
     AllCommand(client);
 })();
-//YHYrc#8NgK#5YYyi
+
 process.on('unhandledRejection', error => {
-    if (error.code === 10062) return console.log("La co zebi");
     console.error(`Uncaught Promise Rejection: \n${error.stack}`);
 })

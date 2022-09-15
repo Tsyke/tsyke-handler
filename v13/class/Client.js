@@ -1,6 +1,6 @@
 const { Client, Collection } = require("discord.js");
 const fetch = require("node-fetch");
-class Stats extends Client {
+class TsykeHandler extends Client {
     constructor(options) {
         super(options);
     }
@@ -13,4 +13,4 @@ class Stats extends Client {
     }
 }
 
-module.exports = Stats;
+module.exports = TsykeHandler;
