@@ -1,0 +1,19 @@
+{
+  "name": "v0.6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo \"INFO: Dev script is building...\" && tsc && nodemon ./build/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^1.6.3",
+    "@discordjs/core": "^0.6.0",
+    "@discordjs/rest": "^1.7.1",
+    "@discordjs/ws": "^0.8.3",
+    "dotenv": "^16.1.3"
+  }
+}
